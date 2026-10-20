@@ -1,0 +1,9 @@
+{
+  "name": "BacterioQuest",
+  "short_name": "BacterioQuest",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EDF1F3",
+  "theme_color": "#0F6E7A",
+  "icons": []
+}

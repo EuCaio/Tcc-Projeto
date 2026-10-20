@@ -1,0 +1,11 @@
+[
+  {"nome":"Penicilina","classe":"Beta-lactâmico","mecanismo":"Inibe a síntese da parede celular","nivel":1},
+  {"nome":"Oxacilina","classe":"Beta-lactâmico","mecanismo":"Inibe a síntese da parede celular","nivel":1},
+  {"nome":"Amoxicilina","classe":"Beta-lactâmico","mecanismo":"Inibe a síntese da parede celular","nivel":1},
+  {"nome":"Ciprofloxacino","classe":"Fluoroquinolona","mecanismo":"Inibe a DNA girase","nivel":1},
+  {"nome":"Ceftriaxona","classe":"Cefalosporina","mecanismo":"Inibe a síntese da parede celular","nivel":2},
+  {"nome":"Rifampicina","classe":"Rifamicina","mecanismo":"Inibe a RNA polimerase","nivel":2},
+  {"nome":"Claritromicina","classe":"Macrolídeo","mecanismo":"Inibe a síntese proteica (ribossomo 50S)","nivel":2},
+  {"nome":"Piperacilina-tazobactam","classe":"Beta-lactâmico + inibidor de beta-lactamase","mecanismo":"Inibe a parede celular e bloqueia beta-lactamases","nivel":3},
+  {"nome":"Vancomicina","classe":"Glicopeptídeo","mecanismo":"Inibe a síntese da parede celular (Gram-positivas)","nivel":3}
+]

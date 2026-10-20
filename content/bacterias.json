@@ -1,0 +1,11 @@
+[
+  {"nome":"Staphylococcus aureus","gram":"Gram-positiva","morfologia":"Cocos em cachos","doenca":"Infecções de pele e abscessos","antibiotico":"Oxacilina","curiosidade":"A versão resistente (MRSA) exige vancomicina.","nivel":1},
+  {"nome":"Streptococcus pyogenes","gram":"Gram-positiva","morfologia":"Cocos em cadeias","doenca":"Faringite estreptocócica","antibiotico":"Penicilina","curiosidade":"Pode causar febre reumática se a faringite não for tratada.","nivel":1},
+  {"nome":"Streptococcus pneumoniae","gram":"Gram-positiva","morfologia":"Diplococos","doenca":"Pneumonia comunitária","antibiotico":"Amoxicilina","curiosidade":"Possui cápsula polissacarídica que dificulta a fagocitose.","nivel":2},
+  {"nome":"Bacillus anthracis","gram":"Gram-positiva","morfologia":"Bacilos","doenca":"Antraz","antibiotico":"Ciprofloxacino","curiosidade":"Forma esporos extremamente resistentes no ambiente.","nivel":3},
+  {"nome":"Escherichia coli","gram":"Gram-negativa","morfologia":"Bacilos","doenca":"Infecção urinária","antibiotico":"Ciprofloxacino","curiosidade":"Faz parte da microbiota intestinal, mas há cepas patogênicas.","nivel":1},
+  {"nome":"Pseudomonas aeruginosa","gram":"Gram-negativa","morfologia":"Bacilos","doenca":"Infecção em queimados e fibrose cística","antibiotico":"Piperacilina-tazobactam","curiosidade":"Forma biofilmes e tem resistência intrínseca a vários antibióticos.","nivel":2},
+  {"nome":"Neisseria gonorrhoeae","gram":"Gram-negativa","morfologia":"Diplococos","doenca":"Gonorreia","antibiotico":"Ceftriaxona","curiosidade":"Cresce em ágar chocolate com CO₂.","nivel":2},
+  {"nome":"Helicobacter pylori","gram":"Gram-negativa","morfologia":"Espiral","doenca":"Úlcera gástrica","antibiotico":"Claritromicina","curiosidade":"Produz urease para sobreviver no pH ácido do estômago.","nivel":3},
+  {"nome":"Mycobacterium tuberculosis","gram":"BAAR (álcool-ácido resistente)","morfologia":"Bacilos","doenca":"Tuberculose","antibiotico":"Rifampicina","curiosidade":"Parede rica em ácidos micólicos; usa coloração de Ziehl-Neelsen.","nivel":3}
+]

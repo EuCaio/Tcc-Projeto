@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-fundo text-tinta font-sans; }
+.card { @apply bg-white border border-slate-200 rounded-2xl p-4 mb-3; }
+.btn { @apply bg-acc text-white font-semibold rounded-xl px-5 py-3 disabled:opacity-40; }
+.btn-alt { @apply border border-slate-300 rounded-xl px-5 py-3 font-semibold; }
+.opt { @apply block w-full text-left border-2 border-slate-200 rounded-xl p-3 my-2 bg-white; }
+.input { @apply w-full border border-slate-300 rounded-xl p-3 my-1 bg-white; }
