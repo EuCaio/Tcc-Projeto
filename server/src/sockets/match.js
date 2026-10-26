@@ -1,4 +1,4 @@
-// RF06: o servidor sorteia, cronometra e valida. O cliente só exibe e responde.
+// O servidor sorteia, cronometra e valida. O cliente só exibe e responde.
 import { query } from '../config/db.js';
 import { loadContent } from '../controllers/quiz.js';
 import { generateQuestion } from '../services/questionGenerator.js';
@@ -6,7 +6,7 @@ import { placar, salaPublica } from './rooms.js';
 
 const N_QUESTOES = 10;
 const TEMPO_MS = 15000;
-const PAUSA_MS = 3000;
+const PAUSA_MS = Number(process.env.MATCH_PAUSA_MS) || 3000;
 
 export async function iniciarPartida(io, room) {
   const { bacteria, antibiotics } = await loadContent();

@@ -1,4 +1,4 @@
-// RF02: dados básicos sempre visíveis; extras liberados por nível.
+// Dados básicos sempre visíveis; extras liberados por nível.
 export function filtrarBacteria(b, nivel) {
   const liberado = nivel >= b.nivel_desbloqueio;
   return { ...b, curiosidade: liberado ? b.curiosidade : null, bloqueado: !liberado };

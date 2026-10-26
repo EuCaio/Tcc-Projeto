@@ -37,23 +37,64 @@ npm install
 npm run dev
 ```
 
-## Mapa de requisitos
+## Teste de fumaça
 
-| Requisito | Onde está |
-|---|---|
-| RF01 Jogos/desafios | `server/src/services/questionGenerator.js`, `server/src/controllers/quiz.js`, `client/src/pages/Quiz.jsx` |
-| RF02 Enciclopédia com desbloqueio | `server/src/services/unlockService.js`, `client/src/pages/Encyclopedia.jsx` |
-| RF03 XP, níveis e conquistas | `server/src/services/progressService.js` |
-| RF04 Desempenho | `server/src/controllers/stats.js`, `client/src/pages/Stats.jsx` (painel do professor: TODO) |
-| RF05 Cadastro e login | `server/src/controllers/auth.js`, `client/src/pages/Login.jsx` |
-| RF06 Salas e 1v1 | `server/src/sockets/`, `client/src/pages/Lobby.jsx` e `Match.jsx` |
-| RNF03 Android + web | PWA (`client/public/manifest.json`); falta service worker (ver TODO) |
-| RNF04 Confiabilidade científica | `content/` + `content/REVISAO.md` |
+Com o servidor rodando, execute em outro terminal:
+
+```bash
+cd server
+npm run smoke
+```
+
+O script cria dois usuários e percorre cadastro, login, enciclopédia, uma rodada solo, desempenho e uma
+partida multiplayer completa (23 verificações). Para acelerar a partida multiplayer nos testes, inicie o
+servidor com `MATCH_PAUSA_MS=300`. Para testar através do frontend: `API=http://localhost:5173 npm run smoke`.
+
+## Testes automatizados
+
+```bash
+cd server
+npm run migrate   # aplica também a migration 002 (rodadas)
+npm test
+```
+
+Não precisam do servidor rodando. Cobrem o gerador de questões, a pontuação, o desbloqueio por nível,
+a **validação dos JSONs de `content/`** (útil ao ampliar o conteúdo) e as rodadas no banco.
+Os testes de banco são ignorados automaticamente se o PostgreSQL não estiver disponível.
 
 ## Conteúdo didático
 
-Edite apenas `content/bacterias.json` e `content/antibioticos.json` e rode `npm run seed` na pasta `server`.
-O conteúdo inicial é um **exemplo e precisa ser revisado** por especialista (RNF04) antes de testes com alunos.
+Hoje são **30 bactérias** e **17 antibióticos**, em 4 níveis de desbloqueio. Para alterar, edite
+`content/bacterias.json` e `content/antibioticos.json` e rode, na pasta `server`:
+
+```bash
+npm test           # valida os JSONs (campos, níveis, antibióticos que não existem no catálogo...)
+npm run seed       # grava no banco
+```
+
+Campos de cada bactéria: `nome`, `gram`, `morfologia`, `doenca`, `antibiotico` (o principal, que é a resposta
+da questão), `outros_antibioticos` (também corretos; nunca aparecem como alternativa errada), `curiosidade` e `nivel`.
+Mecanismos de ação iguais devem ter exatamente o mesmo texto em `antibioticos.json`.
+
+
+## Status das sprints
+
+- [x] **Sprint 0:** esqueleto validado contra PostgreSQL real (migrate, seed, API, multiplayer e proxy do frontend)
+- [ ] **Sprint 1** (em andamento)
+  - [x] Testes automatizados (gerador, pontuação, desbloqueio, conteúdo, rodadas)
+  - [x] Rodadas do quiz guardadas no banco (`rounds`), com limpeza de rodadas abandonadas
+  - [x] Conteúdo ampliado para 30 bactérias e 17 antibióticos
+  - [ ] Deploy
+
+## Trabalhando em dupla (Git)
+
+```bash
+git init && git add . && git commit -m "Esqueleto inicial"
+# crie o repositório no GitHub e conecte:
+git remote add origin <url> && git push -u origin main
+```
+
+Sugestão de divisão: uma pessoa em `client/`, outra em `server/` e `content/`. Use branches por funcionalidade.
 
 ## Próximos passos (TODO)
 
@@ -62,4 +103,4 @@ O conteúdo inicial é um **exemplo e precisa ser revisado** por especialista (R
 - [ ] Service worker e ícones do PWA (ex.: `vite-plugin-pwa`)
 - [ ] Mais módulos de jogo: associação de estruturas, simulação de diagnóstico
 - [ ] Testes automatizados e questionário SUS
-- [ ] Guardar rodadas do quiz em Redis ou banco, em vez de memória
+- [ ] Tempo do quiz solo é informado pelo cliente (limitado a 0–15 s); medir no servidor se o ranking virar competitivo

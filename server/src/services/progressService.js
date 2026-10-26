@@ -1,13 +1,15 @@
-// RF03: XP, níveis e conquistas
+// XP, níveis e conquistas
 import { query } from '../config/db.js';
 
 export const TEMPO_MAX_S = 15;
 export const nivelPorXp = (xp) => Math.floor(xp / 100) + 1;
 
+// O tempo vem do cliente no quiz solo, então é limitado a [0, tempo máximo].
+// Sem isso, um tempo negativo renderia mais pontos que o máximo permitido.
 export function pontosPor(correta, tempoMs) {
   if (!correta) return 0;
-  const restante = Math.max(0, TEMPO_MAX_S - Math.floor((tempoMs ?? TEMPO_MAX_S * 1000) / 1000));
-  return 10 + restante;
+  const ms = Number.isFinite(tempoMs) ? Math.min(Math.max(tempoMs, 0), TEMPO_MAX_S * 1000) : TEMPO_MAX_S * 1000;
+  return 10 + (TEMPO_MAX_S - Math.floor(ms / 1000));
 }
 
 export async function addXp(userId, pontos) {

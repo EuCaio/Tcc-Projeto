@@ -1,11 +1,11 @@
-// RF05: cadastro e login
+// Cadastro e login
 import bcrypt from 'bcryptjs';
 import { query } from '../config/db.js';
 import { signToken } from '../middlewares/auth.js';
 import { nivelPorXp } from '../services/progressService.js';
+import { httpError as fail } from '../middlewares/error.js';
 
 const publico = (u) => ({ id: u.id, nome: u.nome, email: u.email, papel: u.papel, xp: u.xp, nivel: nivelPorXp(u.xp) });
-const fail = (status, msg) => Object.assign(new Error(msg), { status });
 
 export async function register(req, res) {
   const { nome, email, senha, papel = 'aluno' } = req.body;

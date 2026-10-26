@@ -4,7 +4,7 @@ import { useAuth } from '../store/auth.js';
 import { useCountdown } from '../hooks/useTimer.js';
 import Timer from '../components/Timer.jsx';
 
-// RF01: quiz solo contra o tempo
+// Quiz solo contra o tempo
 export default function Quiz() {
   const [rodada, setRodada] = useState(null);
   const [i, setI] = useState(0);

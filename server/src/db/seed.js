@@ -23,14 +23,19 @@ for (const a of read('antibioticos.json')) {
   );
 }
 
+const catalogo = new Set(read('antibioticos.json').map((a) => a.nome));
+
 for (const b of read('bacterias.json')) {
+  const outros = b.outros_antibioticos ?? [];
+  for (const nome of [b.antibiotico, ...outros]) {
+    if (!catalogo.has(nome)) throw new Error(`${b.nome}: antibiótico não cadastrado: ${nome}`);
+  }
   const { rows } = await pool.query('SELECT id FROM antibiotics WHERE nome=$1', [b.antibiotico]);
-  if (!rows[0]) throw new Error(`Antibiótico não cadastrado: ${b.antibiotico}`);
   await pool.query(
-    `INSERT INTO bacteria (nome, gram, morfologia, doenca, antibiotic_id, curiosidade, nivel_desbloqueio)
-     VALUES ($1,$2,$3,$4,$5,$6,$7)
-     ON CONFLICT (nome) DO UPDATE SET gram=$2, morfologia=$3, doenca=$4, antibiotic_id=$5, curiosidade=$6, nivel_desbloqueio=$7`,
-    [b.nome, b.gram, b.morfologia, b.doenca, rows[0].id, b.curiosidade, b.nivel]
+    `INSERT INTO bacteria (nome, gram, morfologia, doenca, antibiotic_id, curiosidade, nivel_desbloqueio, outros_antibioticos)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
+     ON CONFLICT (nome) DO UPDATE SET gram=$2, morfologia=$3, doenca=$4, antibiotic_id=$5, curiosidade=$6, nivel_desbloqueio=$7, outros_antibioticos=$8`,
+    [b.nome, b.gram, b.morfologia, b.doenca, rows[0].id, b.curiosidade, b.nivel, outros]
   );
 }
 

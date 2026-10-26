@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS match_players (
   PRIMARY KEY (match_id, user_id)
 );
 
--- Base do RF04: cada resposta fica registrada
+-- Base do desempenho: cada resposta fica registrada
 CREATE TABLE IF NOT EXISTS answers (
   id SERIAL PRIMARY KEY,
   user_id INT REFERENCES users(id) ON DELETE CASCADE,

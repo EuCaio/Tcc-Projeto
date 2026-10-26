@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { emitir, getSocket } from '../socket/index.js';
 
-// RF06: criar ou entrar em sala
+// Criar ou entrar em sala
 export default function Lobby() {
   const [code, setCode] = useState('');
   const [erro, setErro] = useState('');

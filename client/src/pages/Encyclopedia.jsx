@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api/client.js';
 
-// RF02: dados básicos sempre visíveis; extras liberados por nível
+// Dados básicos sempre visíveis; extras liberados por nível
 export default function Encyclopedia() {
   const [bact, setBact] = useState(null);
   const [atb, setAtb] = useState(null);
@@ -26,7 +26,7 @@ export default function Encyclopedia() {
             <b><i>{b.nome}</i></b>
             <span className={`text-xs text-white px-2 py-0.5 rounded-full ${b.gram.startsWith('Gram-p') ? 'bg-pos' : b.gram.startsWith('Gram-n') ? 'bg-neg' : 'bg-slate-500'}`}>{b.gram}</span>
           </div>
-          <p className="text-slate-600 text-sm">{b.morfologia} · {b.doenca} · {b.antibiotico}</p>
+          <p className="text-slate-600 text-sm">{b.morfologia} · {b.doenca} · {b.antibiotico}{b.outros_antibioticos?.length > 0 && ` (também: ${b.outros_antibioticos.join(', ')})`}</p>
           <p className="mt-1">{b.bloqueado ? `🔒 Curiosidade liberada no nível ${b.nivel_desbloqueio}` : b.curiosidade}</p>
         </div>
       ))}

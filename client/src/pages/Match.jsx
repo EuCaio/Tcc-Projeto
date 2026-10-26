@@ -4,7 +4,7 @@ import { emitir, getSocket } from '../socket/index.js';
 import { useCountdown } from '../hooks/useTimer.js';
 import Timer from '../components/Timer.jsx';
 
-// RF06: lobby da sala, partida multiplayer e placar
+// Lobby da sala, partida multiplayer e placar
 export default function Match() {
   const s = getSocket();
   const nav = useNavigate();

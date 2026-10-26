@@ -1,5 +1,5 @@
-// RF01: gera questões a partir dos dados do banco.
-// bacteria: [{id, nome, gram, morfologia, doenca, antibiotico}]
+// Gera questões a partir dos dados do banco.
+// bacteria: [{id, nome, gram, morfologia, doenca, antibiotico, outros_antibioticos}]
 // antibiotics: [{nome, mecanismo}]
 const rnd = (a) => a[Math.floor(Math.random() * a.length)];
 const shuffle = (a) =>
@@ -28,7 +28,9 @@ export function generateQuestion(bacteria, antibiotics) {
   } else if (categoria === 'atb') {
     enunciado = `Qual antibiótico é indicado em "${b.doenca}" causada por ${b.nome}?`;
     resposta = b.antibiotico;
-    pool = uniq(antibiotics.map((x) => x.nome));
+    // Antibióticos que também servem para essa infecção nunca entram como alternativa errada.
+    const tambemCorretos = b.outros_antibioticos ?? [];
+    pool = uniq(antibiotics.map((x) => x.nome)).filter((n) => !tambemCorretos.includes(n));
   } else {
     const a = rnd(antibiotics);
     bacteriaId = null;

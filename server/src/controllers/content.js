@@ -1,4 +1,4 @@
-// RF02: enciclopédia com liberação progressiva
+// Enciclopédia com liberação progressiva
 import { query } from '../config/db.js';
 import { nivelPorXp } from '../services/progressService.js';
 import { filtrarBacteria, filtrarAntibiotico } from '../services/unlockService.js';

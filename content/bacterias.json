@@ -1,11 +1,375 @@
 [
-  {"nome":"Staphylococcus aureus","gram":"Gram-positiva","morfologia":"Cocos em cachos","doenca":"Infecções de pele e abscessos","antibiotico":"Oxacilina","curiosidade":"A versão resistente (MRSA) exige vancomicina.","nivel":1},
-  {"nome":"Streptococcus pyogenes","gram":"Gram-positiva","morfologia":"Cocos em cadeias","doenca":"Faringite estreptocócica","antibiotico":"Penicilina","curiosidade":"Pode causar febre reumática se a faringite não for tratada.","nivel":1},
-  {"nome":"Streptococcus pneumoniae","gram":"Gram-positiva","morfologia":"Diplococos","doenca":"Pneumonia comunitária","antibiotico":"Amoxicilina","curiosidade":"Possui cápsula polissacarídica que dificulta a fagocitose.","nivel":2},
-  {"nome":"Bacillus anthracis","gram":"Gram-positiva","morfologia":"Bacilos","doenca":"Antraz","antibiotico":"Ciprofloxacino","curiosidade":"Forma esporos extremamente resistentes no ambiente.","nivel":3},
-  {"nome":"Escherichia coli","gram":"Gram-negativa","morfologia":"Bacilos","doenca":"Infecção urinária","antibiotico":"Ciprofloxacino","curiosidade":"Faz parte da microbiota intestinal, mas há cepas patogênicas.","nivel":1},
-  {"nome":"Pseudomonas aeruginosa","gram":"Gram-negativa","morfologia":"Bacilos","doenca":"Infecção em queimados e fibrose cística","antibiotico":"Piperacilina-tazobactam","curiosidade":"Forma biofilmes e tem resistência intrínseca a vários antibióticos.","nivel":2},
-  {"nome":"Neisseria gonorrhoeae","gram":"Gram-negativa","morfologia":"Diplococos","doenca":"Gonorreia","antibiotico":"Ceftriaxona","curiosidade":"Cresce em ágar chocolate com CO₂.","nivel":2},
-  {"nome":"Helicobacter pylori","gram":"Gram-negativa","morfologia":"Espiral","doenca":"Úlcera gástrica","antibiotico":"Claritromicina","curiosidade":"Produz urease para sobreviver no pH ácido do estômago.","nivel":3},
-  {"nome":"Mycobacterium tuberculosis","gram":"BAAR (álcool-ácido resistente)","morfologia":"Bacilos","doenca":"Tuberculose","antibiotico":"Rifampicina","curiosidade":"Parede rica em ácidos micólicos; usa coloração de Ziehl-Neelsen.","nivel":3}
+  {
+    "nome": "Staphylococcus aureus",
+    "gram": "Gram-positiva",
+    "morfologia": "Cocos em cachos",
+    "doenca": "Furúnculos e abscessos de pele",
+    "antibiotico": "Oxacilina",
+    "outros_antibioticos": [
+      "Cefalexina",
+      "Vancomicina"
+    ],
+    "curiosidade": "A versão resistente (MRSA) exige vancomicina.",
+    "nivel": 1
+  },
+  {
+    "nome": "Streptococcus pyogenes",
+    "gram": "Gram-positiva",
+    "morfologia": "Cocos em cadeias",
+    "doenca": "Faringite estreptocócica",
+    "antibiotico": "Penicilina",
+    "outros_antibioticos": [
+      "Amoxicilina",
+      "Cefalexina"
+    ],
+    "curiosidade": "Pode causar febre reumática se a faringite não for tratada.",
+    "nivel": 1
+  },
+  {
+    "nome": "Escherichia coli",
+    "gram": "Gram-negativa",
+    "morfologia": "Bacilos",
+    "doenca": "Pielonefrite (infecção urinária alta)",
+    "antibiotico": "Ciprofloxacino",
+    "outros_antibioticos": [
+      "Ceftriaxona",
+      "Gentamicina"
+    ],
+    "curiosidade": "Faz parte da microbiota intestinal, mas há cepas patogênicas.",
+    "nivel": 1
+  },
+  {
+    "nome": "Salmonella Typhi",
+    "gram": "Gram-negativa",
+    "morfologia": "Bacilos",
+    "doenca": "Febre tifoide",
+    "antibiotico": "Ceftriaxona",
+    "outros_antibioticos": [
+      "Azitromicina",
+      "Ciprofloxacino"
+    ],
+    "curiosidade": "Infecta apenas humanos; portadores crônicos podem abrigar a bactéria na vesícula biliar.",
+    "nivel": 1
+  },
+  {
+    "nome": "Shigella spp.",
+    "gram": "Gram-negativa",
+    "morfologia": "Bacilos",
+    "doenca": "Disenteria bacilar (diarreia com sangue)",
+    "antibiotico": "Ciprofloxacino",
+    "outros_antibioticos": [
+      "Azitromicina",
+      "Ceftriaxona"
+    ],
+    "curiosidade": "Uma dose infectante muito pequena já basta para causar a doença.",
+    "nivel": 1
+  },
+  {
+    "nome": "Streptococcus pneumoniae",
+    "gram": "Gram-positiva",
+    "morfologia": "Diplococos",
+    "doenca": "Pneumonia lobar típica",
+    "antibiotico": "Amoxicilina",
+    "outros_antibioticos": [
+      "Penicilina",
+      "Ceftriaxona"
+    ],
+    "curiosidade": "Possui cápsula polissacarídica que dificulta a fagocitose.",
+    "nivel": 2
+  },
+  {
+    "nome": "Pseudomonas aeruginosa",
+    "gram": "Gram-negativa",
+    "morfologia": "Bacilos",
+    "doenca": "Infecção em queimados e fibrose cística",
+    "antibiotico": "Piperacilina-tazobactam",
+    "outros_antibioticos": [
+      "Ciprofloxacino",
+      "Gentamicina"
+    ],
+    "curiosidade": "Forma biofilmes e tem resistência intrínseca a vários antibióticos.",
+    "nivel": 2
+  },
+  {
+    "nome": "Neisseria gonorrhoeae",
+    "gram": "Gram-negativa",
+    "morfologia": "Diplococos",
+    "doenca": "Gonorreia",
+    "antibiotico": "Ceftriaxona",
+    "outros_antibioticos": [
+      "Azitromicina"
+    ],
+    "curiosidade": "No exame do pus uretral, os diplococos aparecem dentro dos neutrófilos.",
+    "nivel": 2
+  },
+  {
+    "nome": "Neisseria meningitidis",
+    "gram": "Gram-negativa",
+    "morfologia": "Diplococos",
+    "doenca": "Meningite meningocócica",
+    "antibiotico": "Ceftriaxona",
+    "outros_antibioticos": [
+      "Penicilina",
+      "Ampicilina"
+    ],
+    "curiosidade": "É doença de notificação compulsória, e os contatos próximos recebem quimioprofilaxia.",
+    "nivel": 2
+  },
+  {
+    "nome": "Vibrio cholerae",
+    "gram": "Gram-negativa",
+    "morfologia": "Bacilos curvos (em vírgula)",
+    "doenca": "Cólera",
+    "antibiotico": "Doxiciclina",
+    "outros_antibioticos": [
+      "Azitromicina",
+      "Ciprofloxacino"
+    ],
+    "curiosidade": "O pilar do tratamento é a reidratação; o antibiótico apenas encurta a doença.",
+    "nivel": 2
+  },
+  {
+    "nome": "Bordetella pertussis",
+    "gram": "Gram-negativa",
+    "morfologia": "Cocobacilos",
+    "doenca": "Coqueluche",
+    "antibiotico": "Azitromicina",
+    "outros_antibioticos": [
+      "Claritromicina"
+    ],
+    "curiosidade": "A vacina aplicada na gestação protege o recém-nascido nos primeiros meses.",
+    "nivel": 2
+  },
+  {
+    "nome": "Streptococcus agalactiae",
+    "gram": "Gram-positiva",
+    "morfologia": "Cocos em cadeias",
+    "doenca": "Sepse neonatal precoce",
+    "antibiotico": "Ampicilina",
+    "outros_antibioticos": [
+      "Penicilina",
+      "Gentamicina"
+    ],
+    "curiosidade": "Coloniza o trato genital de parte das gestantes, por isso há triagem no fim da gestação.",
+    "nivel": 2
+  },
+  {
+    "nome": "Clostridium tetani",
+    "gram": "Gram-positiva",
+    "morfologia": "Bacilos esporulados",
+    "doenca": "Tétano",
+    "antibiotico": "Metronidazol",
+    "outros_antibioticos": [
+      "Penicilina"
+    ],
+    "curiosidade": "Sua toxina bloqueia neurotransmissores inibitórios e causa espasmos musculares.",
+    "nivel": 2
+  },
+  {
+    "nome": "Corynebacterium diphtheriae",
+    "gram": "Gram-positiva",
+    "morfologia": "Bacilos em forma de clava",
+    "doenca": "Difteria",
+    "antibiotico": "Penicilina",
+    "outros_antibioticos": [
+      "Azitromicina"
+    ],
+    "curiosidade": "A gravidade vem da toxina; por isso o tratamento inclui soro antidiftérico e a vacina protege contra a toxina.",
+    "nivel": 2
+  },
+  {
+    "nome": "Bacillus anthracis",
+    "gram": "Gram-positiva",
+    "morfologia": "Bacilos",
+    "doenca": "Antraz",
+    "antibiotico": "Ciprofloxacino",
+    "outros_antibioticos": [
+      "Doxiciclina"
+    ],
+    "curiosidade": "Forma esporos extremamente resistentes no ambiente.",
+    "nivel": 3
+  },
+  {
+    "nome": "Helicobacter pylori",
+    "gram": "Gram-negativa",
+    "morfologia": "Espiral",
+    "doenca": "Úlcera gástrica",
+    "antibiotico": "Claritromicina",
+    "outros_antibioticos": [
+      "Amoxicilina",
+      "Metronidazol"
+    ],
+    "curiosidade": "Produz urease para sobreviver no pH ácido do estômago.",
+    "nivel": 3
+  },
+  {
+    "nome": "Mycobacterium tuberculosis",
+    "gram": "BAAR (álcool-ácido resistente)",
+    "morfologia": "Bacilos",
+    "doenca": "Tuberculose",
+    "antibiotico": "Rifampicina",
+    "outros_antibioticos": [
+      "Isoniazida"
+    ],
+    "curiosidade": "Parede rica em ácidos micólicos; usa coloração de Ziehl-Neelsen.",
+    "nivel": 3
+  },
+  {
+    "nome": "Enterococcus faecalis",
+    "gram": "Gram-positiva",
+    "morfologia": "Cocos em pares e cadeias curtas",
+    "doenca": "Endocardite por enterococo",
+    "antibiotico": "Ampicilina",
+    "outros_antibioticos": [
+      "Gentamicina",
+      "Ceftriaxona",
+      "Vancomicina"
+    ],
+    "curiosidade": "Tolera bile e sobrevive bem em ambiente hospitalar, onde é causa comum de infecções.",
+    "nivel": 3
+  },
+  {
+    "nome": "Clostridioides difficile",
+    "gram": "Gram-positiva",
+    "morfologia": "Bacilos esporulados",
+    "doenca": "Colite pseudomembranosa",
+    "antibiotico": "Vancomicina",
+    "outros_antibioticos": [
+      "Metronidazol"
+    ],
+    "curiosidade": "Costuma surgir após o uso de antibióticos de amplo espectro, que alteram a microbiota intestinal.",
+    "nivel": 3
+  },
+  {
+    "nome": "Haemophilus influenzae",
+    "gram": "Gram-negativa",
+    "morfologia": "Cocobacilos",
+    "doenca": "Epiglotite aguda em crianças",
+    "antibiotico": "Ceftriaxona",
+    "outros_antibioticos": [],
+    "curiosidade": "Cresce em ágar chocolate, pois precisa dos fatores X e V; a vacina reduziu muito as doenças invasivas pelo tipo b.",
+    "nivel": 3
+  },
+  {
+    "nome": "Legionella pneumophila",
+    "gram": "Gram-negativa",
+    "morfologia": "Bacilos",
+    "doenca": "Doença dos legionários",
+    "antibiotico": "Azitromicina",
+    "outros_antibioticos": [
+      "Ciprofloxacino",
+      "Claritromicina"
+    ],
+    "curiosidade": "Associada a ar-condicionado e água estagnada; não passa de pessoa a pessoa e cora-se mal pelo Gram.",
+    "nivel": 3
+  },
+  {
+    "nome": "Listeria monocytogenes",
+    "gram": "Gram-positiva",
+    "morfologia": "Bacilos",
+    "doenca": "Listeriose (alimentos contaminados)",
+    "antibiotico": "Ampicilina",
+    "outros_antibioticos": [
+      "Gentamicina"
+    ],
+    "curiosidade": "Cresce em temperatura de geladeira e representa risco especial na gestação.",
+    "nivel": 3
+  },
+  {
+    "nome": "Brucella spp.",
+    "gram": "Gram-negativa",
+    "morfologia": "Cocobacilos",
+    "doenca": "Brucelose (leite não pasteurizado)",
+    "antibiotico": "Doxiciclina",
+    "outros_antibioticos": [
+      "Rifampicina",
+      "Gentamicina"
+    ],
+    "curiosidade": "Zoonose que exige tratamento prolongado com associação de antibióticos.",
+    "nivel": 3
+  },
+  {
+    "nome": "Rickettsia rickettsii",
+    "gram": "Gram-negativa",
+    "morfologia": "Cocobacilos",
+    "doenca": "Febre maculosa",
+    "antibiotico": "Doxiciclina",
+    "outros_antibioticos": [],
+    "curiosidade": "Parasita intracelular obrigatório transmitido por carrapatos; cora-se mal pelo Gram.",
+    "nivel": 3
+  },
+  {
+    "nome": "Mycobacterium leprae",
+    "gram": "BAAR (álcool-ácido resistente)",
+    "morfologia": "Bacilos",
+    "doenca": "Hanseníase",
+    "antibiotico": "Dapsona",
+    "outros_antibioticos": [
+      "Rifampicina"
+    ],
+    "curiosidade": "Não cresce em meios de cultura artificiais; o Brasil está entre os países com mais casos no mundo.",
+    "nivel": 4
+  },
+  {
+    "nome": "Yersinia pestis",
+    "gram": "Gram-negativa",
+    "morfologia": "Cocobacilos",
+    "doenca": "Peste bubônica",
+    "antibiotico": "Doxiciclina",
+    "outros_antibioticos": [
+      "Gentamicina",
+      "Ciprofloxacino"
+    ],
+    "curiosidade": "É transmitida pela pulga de roedores.",
+    "nivel": 4
+  },
+  {
+    "nome": "Clostridium perfringens",
+    "gram": "Gram-positiva",
+    "morfologia": "Bacilos esporulados",
+    "doenca": "Gangrena gasosa",
+    "antibiotico": "Penicilina",
+    "outros_antibioticos": [],
+    "curiosidade": "Produz gás nos tecidos e uma toxina (alfa) que destrói células.",
+    "nivel": 4
+  },
+  {
+    "nome": "Actinomyces israelii",
+    "gram": "Gram-positiva",
+    "morfologia": "Bacilos filamentosos ramificados",
+    "doenca": "Actinomicose cervicofacial",
+    "antibiotico": "Penicilina",
+    "outros_antibioticos": [
+      "Amoxicilina",
+      "Ampicilina",
+      "Doxiciclina"
+    ],
+    "curiosidade": "Forma grânulos de enxofre no pus das lesões.",
+    "nivel": 4
+  },
+  {
+    "nome": "Haemophilus ducreyi",
+    "gram": "Gram-negativa",
+    "morfologia": "Cocobacilos",
+    "doenca": "Cancro mole",
+    "antibiotico": "Azitromicina",
+    "outros_antibioticos": [
+      "Ceftriaxona",
+      "Ciprofloxacino"
+    ],
+    "curiosidade": "Causa úlcera genital dolorosa, ao contrário do cancro duro da sífilis.",
+    "nivel": 4
+  },
+  {
+    "nome": "Bacteroides fragilis",
+    "gram": "Gram-negativa",
+    "morfologia": "Bacilos",
+    "doenca": "Abscesso intra-abdominal e pélvico",
+    "antibiotico": "Metronidazol",
+    "outros_antibioticos": [
+      "Piperacilina-tazobactam"
+    ],
+    "curiosidade": "É anaeróbio e intrinsecamente resistente aos aminoglicosídeos.",
+    "nivel": 4
+  }
 ]

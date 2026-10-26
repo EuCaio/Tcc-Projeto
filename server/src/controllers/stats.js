@@ -1,4 +1,4 @@
-// RF04: desempenho
+// Desempenho
 import { query } from '../config/db.js';
 import { nivelPorXp } from '../services/progressService.js';
 

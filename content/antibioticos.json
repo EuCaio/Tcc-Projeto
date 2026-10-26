@@ -1,11 +1,104 @@
 [
-  {"nome":"Penicilina","classe":"Beta-lactâmico","mecanismo":"Inibe a síntese da parede celular","nivel":1},
-  {"nome":"Oxacilina","classe":"Beta-lactâmico","mecanismo":"Inibe a síntese da parede celular","nivel":1},
-  {"nome":"Amoxicilina","classe":"Beta-lactâmico","mecanismo":"Inibe a síntese da parede celular","nivel":1},
-  {"nome":"Ciprofloxacino","classe":"Fluoroquinolona","mecanismo":"Inibe a DNA girase","nivel":1},
-  {"nome":"Ceftriaxona","classe":"Cefalosporina","mecanismo":"Inibe a síntese da parede celular","nivel":2},
-  {"nome":"Rifampicina","classe":"Rifamicina","mecanismo":"Inibe a RNA polimerase","nivel":2},
-  {"nome":"Claritromicina","classe":"Macrolídeo","mecanismo":"Inibe a síntese proteica (ribossomo 50S)","nivel":2},
-  {"nome":"Piperacilina-tazobactam","classe":"Beta-lactâmico + inibidor de beta-lactamase","mecanismo":"Inibe a parede celular e bloqueia beta-lactamases","nivel":3},
-  {"nome":"Vancomicina","classe":"Glicopeptídeo","mecanismo":"Inibe a síntese da parede celular (Gram-positivas)","nivel":3}
+  {
+    "nome": "Penicilina",
+    "classe": "Beta-lactâmico (penicilina)",
+    "mecanismo": "Inibe a síntese da parede celular",
+    "nivel": 1
+  },
+  {
+    "nome": "Amoxicilina",
+    "classe": "Beta-lactâmico (aminopenicilina)",
+    "mecanismo": "Inibe a síntese da parede celular",
+    "nivel": 1
+  },
+  {
+    "nome": "Oxacilina",
+    "classe": "Beta-lactâmico (resistente à penicilinase)",
+    "mecanismo": "Inibe a síntese da parede celular",
+    "nivel": 1
+  },
+  {
+    "nome": "Cefalexina",
+    "classe": "Cefalosporina (1ª geração)",
+    "mecanismo": "Inibe a síntese da parede celular",
+    "nivel": 1
+  },
+  {
+    "nome": "Ciprofloxacino",
+    "classe": "Fluoroquinolona",
+    "mecanismo": "Inibe a DNA girase",
+    "nivel": 1
+  },
+  {
+    "nome": "Ampicilina",
+    "classe": "Beta-lactâmico (aminopenicilina)",
+    "mecanismo": "Inibe a síntese da parede celular",
+    "nivel": 2
+  },
+  {
+    "nome": "Ceftriaxona",
+    "classe": "Cefalosporina (3ª geração)",
+    "mecanismo": "Inibe a síntese da parede celular",
+    "nivel": 2
+  },
+  {
+    "nome": "Rifampicina",
+    "classe": "Rifamicina",
+    "mecanismo": "Inibe a RNA polimerase",
+    "nivel": 2
+  },
+  {
+    "nome": "Claritromicina",
+    "classe": "Macrolídeo",
+    "mecanismo": "Inibe a síntese proteica (ribossomo 50S)",
+    "nivel": 2
+  },
+  {
+    "nome": "Azitromicina",
+    "classe": "Macrolídeo (azalídeo)",
+    "mecanismo": "Inibe a síntese proteica (ribossomo 50S)",
+    "nivel": 2
+  },
+  {
+    "nome": "Doxiciclina",
+    "classe": "Tetraciclina",
+    "mecanismo": "Inibe a síntese proteica (ribossomo 30S)",
+    "nivel": 2
+  },
+  {
+    "nome": "Vancomicina",
+    "classe": "Glicopeptídeo",
+    "mecanismo": "Inibe a síntese da parede celular",
+    "nivel": 3
+  },
+  {
+    "nome": "Piperacilina-tazobactam",
+    "classe": "Beta-lactâmico + inibidor de beta-lactamase",
+    "mecanismo": "Inibe a síntese da parede celular",
+    "nivel": 3
+  },
+  {
+    "nome": "Gentamicina",
+    "classe": "Aminoglicosídeo",
+    "mecanismo": "Inibe a síntese proteica (ribossomo 30S)",
+    "nivel": 3
+  },
+  {
+    "nome": "Metronidazol",
+    "classe": "Nitroimidazol",
+    "mecanismo": "Gera radicais que danificam o DNA (anaeróbios)",
+    "nivel": 3
+  },
+  {
+    "nome": "Isoniazida",
+    "classe": "Antituberculoso",
+    "mecanismo": "Inibe a síntese de ácidos micólicos",
+    "nivel": 3
+  },
+  {
+    "nome": "Dapsona",
+    "classe": "Sulfona",
+    "mecanismo": "Inibe a síntese de folato",
+    "nivel": 4
+  }
 ]

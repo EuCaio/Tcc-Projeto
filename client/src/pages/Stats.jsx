@@ -3,7 +3,7 @@ import { api } from '../api/client.js';
 
 const NOMES = { gram: 'Coloração de Gram', forma: 'Morfologia', doenca: 'Doenças', atb: 'Antibióticos', mec: 'Mecanismos' };
 
-// RF04: acertos e erros por categoria
+// Acertos e erros por categoria
 export default function Stats() {
   const [s, setS] = useState(null);
   useEffect(() => { api('/me/stats').then(setS).catch(() => {}); }, []);

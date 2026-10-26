@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { api } from '../api/client.js';
 import { useAuth } from '../store/auth.js';
 
-// RF05: cadastro e login
+// Cadastro e login
 export default function Login() {
   const [modo, setModo] = useState('login');
   const [f, setF] = useState({ nome: '', email: '', senha: '', papel: 'aluno' });
