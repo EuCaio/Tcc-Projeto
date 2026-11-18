@@ -37,6 +37,10 @@ npm install
 npm run dev
 ```
 
+## Publicação
+
+Veja [DEPLOY.md](DEPLOY.md): Render (app) + Neon (banco), ambos gratuitos.
+
 ## Teste de fumaça
 
 Com o servidor rodando, execute em outro terminal:
@@ -84,7 +88,8 @@ Mecanismos de ação iguais devem ter exatamente o mesmo texto em `antibioticos.
   - [x] Testes automatizados (gerador, pontuação, desbloqueio, conteúdo, rodadas)
   - [x] Rodadas do quiz guardadas no banco (`rounds`), com limpeza de rodadas abandonadas
   - [x] Conteúdo ampliado para 30 bactérias e 17 antibióticos
-  - [ ] Deploy
+  - [x] Deploy preparado: `Dockerfile`, `render.yaml`, trava de segredo, limite de login e cabeçalhos de segurança
+  - [ ] Deploy publicado (contas no Neon e no Render; ver DEPLOY.md)
 
 ## Trabalhando em dupla (Git)
 

@@ -1,0 +1,15 @@
+# Blueprint do Render: cria o serviço web a partir do Dockerfile.
+# O banco fica fora do Render (Neon), porque o Postgres gratuito do Render expira em 30 dias.
+services:
+  - type: web
+    name: bacterioquest
+    runtime: docker
+    plan: free            # sem esta linha o Render cria o serviço no plano pago
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false        # o Render pergunta no deploy; cole a connection string do Neon
