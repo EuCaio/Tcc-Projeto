@@ -25,7 +25,8 @@ O repositório pode ser privado. O arquivo `.env` nunca vai para o Git (está no
 ### 3. Serviço no Render
 1. Crie conta em render.com e conecte o GitHub.
 2. **New → Blueprint** e escolha o repositório. O Render lê o `render.yaml` sozinho.
-3. Quando pedir `DATABASE_URL`, cole a string do Neon. O `JWT_SECRET` é gerado automaticamente.
+3. Quando pedir `DATABASE_URL`, cole a string do Neon **antes de aplicar**. Se deixar em branco, o deploy falha.
+   O `JWT_SECRET` é gerado automaticamente. Cole só a URL (começa com `postgresql://`), sem `psql`, sem aspas e sem espaços.
 4. Confirme que o plano exibido é **Free** e clique em **Apply**. O primeiro build leva alguns minutos.
 
 ### 4. Conferir
@@ -77,7 +78,9 @@ Abra http://localhost:4000.
 | Sintoma | Causa provável |
 |---|---|
 | Deploy falha com "Defina JWT_SECRET" | `JWT_SECRET` ausente ou com menos de 16 caracteres. |
-| Erro de conexão / `ECONNREFUSED` | `DATABASE_URL` vazia ou copiada errada. |
+| `DATABASE_URL está vazia` (ou `ECONNREFUSED 127.0.0.1:5432` em versões antigas) | A variável ficou em branco. No Render: serviço → **Environment** → `DATABASE_URL` → cole a string do Neon → **Save**. O Render publica de novo sozinho. |
+| `DATABASE_URL inválida` | Foi colado o comando inteiro (`psql '...'`) ou a URL está entre aspas. Cole só o trecho que começa com `postgresql://`. |
+| `ECONNREFUSED` com um endereço do Neon | Banco hibernando ou string incompleta; confira se termina com `?sslmode=require` e tente de novo. |
 | Erro de SSL ao conectar | Faltou `?sslmode=require` no fim da string. |
 | Primeira abertura demora ou dá timeout | O serviço estava dormindo; aguarde cerca de 1 minuto e recarregue. |
 | Cobrança inesperada no Render | O serviço foi criado fora do plano **Free**; confira em Settings → Instance Type. |
